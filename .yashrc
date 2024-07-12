@@ -1,0 +1,26 @@
+. --autoload --no-alias initialization/common
+. /etc/profile
+
+set -o vi
+set -o clobber
+export UID=$(id -u)
+export user_id=$(id -u)
+export YASH_PS1='\fibo.${LOGNAME} \fDw.$PWD\fDdi. ${{?:/0/}:+\\fr.$?\\fd. }${{SHLVL-0}:/1}\$ '
+export YASH_PS1P='\fwi'
+export LC_ALL=en_US.utf8
+
+alias tree="tree --prune"
+alias vi="nvim"
+alias vim="nvim"
+alias su="doas su"
+alias sudo="doas"
+alias rgrep="rg"
+alias penv="portageq envvar"
+alias mozilla-stop="/bin/sh ~/.mvpn/mozilla-stop.sh"
+alias mozilla="/bin/sh ~/.mvpn/mozilla.sh"
+alias ls="ls --group-directories-first -abGtX" 
+alias mkdir="mkdir --parents"
+alias grep="rg"
+alias rg="rg --hidden --ignore-case"
+alias cp="cp -r"
+alias mpv="mpv --vo=gpu-next"
