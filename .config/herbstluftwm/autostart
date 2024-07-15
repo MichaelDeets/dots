@@ -166,11 +166,6 @@ hc rule windowtype~"_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)" manage=off
 hc rule index=e
 hc unlock
 
-# monitors
-herbstclient set_monitors 1920x1080+0+0 1440x2560-1440+0
-xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
-xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440 --rate 70 --rotate right --pos 1440x0
-
 # layout
 herbstclient set default_frame_layout horizontal
 hc substitute ALGO settings.default_frame_layout \
@@ -189,6 +184,10 @@ if hc silent new_attr bool my_not_first_autostart; then
 	easyeffects --gapplication-service &
 fi
 
+# monitors
+herbstclient set_monitors 1920x1080+0+0 1440x2560-1440+0
+xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
+xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440 --rate 70 --rotate normal --pos 1440x0
 
 # audio settings
 pw-metadata -n settings 0 clock.max-quantum 500
@@ -203,4 +202,4 @@ xset dpms off
 xset led off
 xset b off
 
-feh --bg-scale --randomize ~/Wallpapers/yr*png &
+feh --bg-scale --randomize ~/Wallpapers/gentoo*png &
