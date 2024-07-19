@@ -13,10 +13,10 @@ LAUNCHOPTS="$MAIN $OTHER"
 
 cd "$GAMEROOT"
 
-. /home/deets/.cs2/pre.sh
+. ~/.cs2/pre.sh
 STATUS=42
 while [ $STATUS -eq 42 ]; do
 	ionice -c 2 -n 0 chrt -f 99 nice -n -20	"${GAMEROOT}"/${GAMEEXE} $LAUNCHOPTS -- $@
 	STATUS=$?
 done
-. /home/deets/.cs2/post.sh; exit $STATUS
+. ~/.cs2/post.sh; exit $STATUS
