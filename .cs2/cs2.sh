@@ -7,7 +7,7 @@ export ENABLE_PATHMATCH=1
 export SDL_VIDEO_DRIVER=x11
 
 GAMEEXE=bin/linuxsteamrt64/cs2
-MAIN="-nojoy"
+MAIN="-nojoy -threads 8"
 OTHER="-ignorecontentasserts -no_assert_dialog -noassert -noassertbrowser -noautoargs -noborder -nobreakpad -nocrashdialog -nohibernate -nohltv -noinitfallbacktextures -nolod -nominidumps -nopanoramajoy -nostyle -novsync -nowatchdog -sse2 -sse3 -sse4"
 LAUNCHOPTS="$MAIN $OTHER"
 
