@@ -1,6 +1,6 @@
 #!/bin/sh
-PID="herbstclient attr clients.focus.pid"
-for i in $(ls /proc/$($PID)/task); do
-	kill -9 $i
-done
+PID="$(herbstclient attr clients.focus.pid)"
+
+kill -9 $PID
+
 herbstclient close_and_remove
