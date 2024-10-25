@@ -158,6 +158,7 @@ hc pad 0 0 0 0 0
 hc unrule -F
 hc rule fixedsize floating=on
 hc rule class="cs2" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="HorizonMW" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule floatplacement=center
 hc rule focus=on
 hc rule windowtype="_NET_WM_WINDOW_TYPE_DIALOG" focus=on
@@ -179,13 +180,14 @@ if hc silent new_attr bool my_not_first_autostart; then
 	dunst &
 	hsetroot -solid "#080808"
 
-	herbstclient focus_monitor 1; herbstclient use 6
-	herbstclient focus_monitor 0; herbstclient use 1
 	easyeffects --gapplication-service &
 fi
 
 # monitors
+herbstclient focus_monitor 1; herbstclient use 6
+herbstclient focus_monitor 0; herbstclient use 1
 herbstclient set_monitors 1920x1080+0+0 1440x2560-1440+0
+
 xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
 xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440 --rate 70 --rotate normal --pos 1440x0
 
