@@ -159,6 +159,7 @@ hc unrule -F
 hc rule fixedsize floating=on
 hc rule class="cs2" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule title="HorizonMW" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule class="iw4x" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule floatplacement=center
 hc rule focus=on
 hc rule windowtype="_NET_WM_WINDOW_TYPE_DIALOG" focus=on
@@ -192,9 +193,9 @@ xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920
 xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440 --rate 70 --rotate normal --pos 1440x0
 
 # audio settings
-pw-metadata -n settings 0 clock.max-quantum 500
-pw-metadata -n settings 0 clock.min-quantum 25
-pw-metadata -n settings 0 clock.quantum 25
+pw-metadata -n settings 0 clock.max-quantum 441
+pw-metadata -n settings 0 clock.min-quantum 49
+pw-metadata -n settings 0 clock.quantum 49
 pw-metadata -n settings 0 clock.rate 44100
 pw-metadata -n settings 0 clock.force-rate 44100
 pw-metadata -n settings 0 clock.allowed-rates '[ 44100 48000 ]'
