@@ -159,7 +159,11 @@ hc unrule -F
 hc rule fixedsize floating=on
 hc rule class="cs2" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule title="HorizonMW" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
-hc rule class="iw4x" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="IW4x: Multiplayer" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="Garry's Mod (x64)" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="Arma Reforger" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="Hell Let Loose" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule title="DayZ" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule floatplacement=center
 hc rule focus=on
 hc rule windowtype="_NET_WM_WINDOW_TYPE_DIALOG" focus=on
@@ -185,12 +189,18 @@ if hc silent new_attr bool my_not_first_autostart; then
 fi
 
 # monitors
+xrandr --output DisplayPort-0 --off
+xrandr --output DisplayPort-1 --off
 herbstclient focus_monitor 1; herbstclient use 6
 herbstclient focus_monitor 0; herbstclient use 1
 herbstclient set_monitors 1920x1080+0+0 1440x2560-1440+0
 
-xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
-xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440 --rate 70 --rotate normal --pos 1440x0
+xrandr --newmode 2560x1440_72 293.76 2560 2608 2640 2720 1440 1443 1448 1500 -hsync +vsync
+xrandr --addmode DisplayPort-1 2560x1440_72
+
+#xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
+xrandr --output DisplayPort-0 --preferred --primary --filter nearest --set TearFree off --mode 1920x1080 --rate 240 --pos 0x0
+xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440_72 --rate 72 --rotate normal --pos 1440x0
 
 # audio settings
 pw-metadata -n settings 0 clock.max-quantum 441
@@ -201,8 +211,9 @@ pw-metadata -n settings 0 clock.force-rate 44100
 pw-metadata -n settings 0 clock.allowed-rates '[ 44100 48000 ]'
 xset m 0 0
 xset s default
-xset dpms off
+xset +dpms
 xset led off
 xset b off
 
 feh --bg-scale --randomize ~/Wallpapers/gentoo*png &
+#lact gui &

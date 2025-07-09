@@ -1,6 +1,6 @@
 set runtimepath+=/usr/share/vim/vimfiles
-source ~/.config/nvim/lua/plugins.lua
 source ~/.config/nvim/256_noir.vim
+source ~/.config/nvim/lua/init.lua
 let g:netrw_banner = 0
 let g:netrw_browse_split = 3
 let g:netrw_liststyle = 3

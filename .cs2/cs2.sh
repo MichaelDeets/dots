@@ -16,7 +16,9 @@ cd "$GAMEROOT"
 . ~/.cs2/pre.sh
 STATUS=42
 while [ $STATUS -eq 42 ]; do
-	ionice -c 2 -n 0 chrt -f 99 nice -n -20	"${GAMEROOT}"/${GAMEEXE} $LAUNCHOPTS -- $@
+#	ionice -c 2 -n 0 chrt -f 99 nice -n -20
+#	ionice -c 2 -n 0 chrt -f 99 
+	ionice -c 2 -n 0 chrt -f 99 nice -n -20 "${GAMEROOT}"/${GAMEEXE} $LAUNCHOPTS -- $@
 	STATUS=$?
 done
 . ~/.cs2/post.sh; exit $STATUS
