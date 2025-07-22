@@ -5,20 +5,18 @@ UNAME=/bin/uname
 export LD_LIBRARY_PATH="${GAMEROOT}"/bin/linuxsteamrt64:$LD_LIBRARY_PATH
 export ENABLE_PATHMATCH=1
 export SDL_VIDEO_DRIVER=x11
+export LD_PRELOAD="/usr/lib64/libSDL3.so.0:/usr/lib64/libSDL2-2.0.so.0:/usr/lib64/libEGL.so:/usr/lib64/libGLESv2.so:/usr/lib64/libvulkan.so:/usr/lib64/libxkbcommon.so.0:/usr/lib64/librenderdoc.so:/usr/lib64/libpangoft2-1.0.so"
 
 GAMEEXE=bin/linuxsteamrt64/cs2
-MAIN="-nojoy -threads 8"
-OTHER="-ignorecontentasserts -no_assert_dialog -noassert -noassertbrowser -noautoargs -noborder -nobreakpad -nocrashdialog -nohibernate -nohltv -noinitfallbacktextures -nolod -nominidumps -nopanoramajoy -nostyle -novsync -nowatchdog -sse2 -sse3 -sse4"
-LAUNCHOPTS="$MAIN $OTHER"
+MAIN="-nojoy -noasert -noautoargs -nocrashdialog -nominidumps -novsync"
+LAUNCHOPTS="$MAIN"
 
 cd "$GAMEROOT"
 
 . ~/.cs2/pre.sh
 STATUS=42
 while [ $STATUS -eq 42 ]; do
-#	ionice -c 2 -n 0 chrt -f 99 nice -n -20
-#	ionice -c 2 -n 0 chrt -f 99 
-	ionice -c 2 -n 0 chrt -f 99 nice -n -20 "${GAMEROOT}"/${GAMEEXE} $LAUNCHOPTS -- $@
+	"${GAMEROOT}"/${GAMEEXE} $LAUNCHOPTS -- $@
 	STATUS=$?
 done
 . ~/.cs2/post.sh; exit $STATUS

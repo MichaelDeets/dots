@@ -157,7 +157,11 @@ hc pad 0 0 0 0 0
 # rules
 hc unrule -F
 hc rule fixedsize floating=on
-hc rule class="cs2" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc set ewmhnotify=true
+hc set ewmhrequests=true
+#hc rule class="cs2" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
+hc rule class="cs2" tag=3 floating=false fullscreen=false keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true borderless=on
+#hc rule class="cs2" borderless=on floating=false fullscreen=true ewmhrequests=false ewmhnotify=false
 hc rule title="HorizonMW" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule title="IW4x: Multiplayer" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
 hc rule title="Garry's Mod (x64)" tag=3 floating=false fullscreen=true keys_inactive="Mod4[+]w|Mod4[+]s|Mod4[+]f" ewmhrequests=false ewmhnotify=false switchtag=true
