@@ -8,6 +8,7 @@ export user_id=$(id -u)
 export YASH_PS1='\fibo.${LOGNAME} \fDw.$PWD\fDdi. ${{?:/0/}:+\\fr.$?\\fd. }${{SHLVL-0}:/1}\$ '
 export YASH_PS1P='\fwi'
 export LC_ALL=en_US.utf8
+export LS_COLORS="ow=34;48;5;235:"
 
 alias tree="tree --prune"
 alias vi="nvim"
@@ -20,12 +21,12 @@ alias mozilla-stop="/bin/sh ~/.mvpn/mozilla-stop.sh"
 alias mozilla="/bin/sh ~/.mvpn/mozilla.sh"
 alias mullvad-stop="/bin/sh ~/.mvpn/mozilla-stop.sh"
 alias mullvad="/bin/sh ~/.mvpn/mullvad.sh"
-alias ls="ls --group-directories-first --all -r -X" 
+#alias ls="ls --group-directories-first --all -r -X" 
+alias ls="eza --group-directories-first --all --reverse --sort=extension --icons --color=always"
 alias mkdir="mkdir --parents"
 alias grep="rg"
 alias rg="rg --hidden --ignore-case"
 alias cp="cp -r"
-alias mpv="mpv --vo=gpu-next"
 alias chattr="busybox chattr"
 alias lsattr="busybox lsattr"
 alias kernel-llvm="LLVM=1 make clean && LLVM=1 make modules_prepare && LLVM=1 make -j12 && LLVM=1 make modules_install && LLVM=1 make install"

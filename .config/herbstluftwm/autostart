@@ -194,17 +194,17 @@ fi
 
 # monitors
 xrandr --output DisplayPort-0 --off
-xrandr --output DisplayPort-1 --off
+xrandr --output DisplayPort-2 --off
 herbstclient focus_monitor 1; herbstclient use 6
 herbstclient focus_monitor 0; herbstclient use 1
 herbstclient set_monitors 1920x1080+0+0 1440x2560-1440+0
 
 xrandr --newmode 2560x1440_72 293.76 2560 2608 2640 2720 1440 1443 1448 1500 -hsync +vsync
-xrandr --addmode DisplayPort-1 2560x1440_72
+xrandr --addmode DisplayPort-2 2560x1440_72
 
 #xrandr --output DisplayPort-0 --preferred --primary --filter nearest --mode 1920x1080 --rate 390 --pos 0x0
 xrandr --output DisplayPort-0 --preferred --primary --filter nearest --set TearFree off --mode 1920x1080 --rate 240 --pos 0x0
-xrandr --output DisplayPort-1 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440_72 --rate 72 --rotate normal --pos 1440x0
+xrandr --output DisplayPort-2 --right-of DisplayPort-0 --filter nearest --set TearFree on --mode 2560x1440_72 --rate 72 --rotate normal --pos 1440x0
 
 # audio settings
 pw-metadata -n settings 0 clock.max-quantum 441
