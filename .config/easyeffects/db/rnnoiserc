@@ -1,0 +1,5 @@
+[sie][RNNoise#0]
+bypass=true
+enableVad=true
+modelName=cb
+vadThres=95

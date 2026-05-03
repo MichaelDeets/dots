@@ -1,0 +1,11 @@
+{
+  "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },
+  "catppuccin": { "branch": "main", "commit": "beaf41a30c26fd7d6c386d383155cbd65dd554cd" },
+  "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "mason": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
+  "mason-lspconfig": { "branch": "main", "commit": "c953789db7fd28eafe5eb5659846d34b5024b3cc" },
+  "mini.icons": { "branch": "main", "commit": "efc85e42262cd0c9e1fdbf806c25cb0be6de115c" },
+  "nvim-lspconfig": { "branch": "master", "commit": "3f58aeca0c6ece8a9fb8782ea3fcb6024f285be3" },
+  "oil.nvim": { "branch": "master", "commit": "f55b25e493a7df76371cfadd0ded5004cb9cd48a" }
+}
